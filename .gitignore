@@ -1,0 +1,9 @@
+.DS_Store
+.env
+node_modules/
+build/css/
+build/js/
+server/
+.sass-cache/
+.idea/
+*.log*
