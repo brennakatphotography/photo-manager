@@ -1,0 +1,11 @@
+{
+  "name": "brenna-photo-app-photo-manager",
+  "version": "1.0.0",
+  "description": "An app for managing folders and photos in the api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "skuttleman@gmail.com",
+  "license": "ISC"
+}
