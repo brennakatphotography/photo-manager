@@ -5,11 +5,11 @@ import { updatePhoto } from '../../actions/photoDetails';
 import { photoDetail } from '../../utils/menuHelpers';
 import EditableField from '../form/EditableField';
 
-class PhotoName extends Component {
+class PhotoDescription extends Component {
   constructor(props) {
     super(props);
     this._TYPE = 'PHOTO';
-    this._FIELD = 'NAME';
+    this._FIELD = 'DESCRIPTION';
   }
 
   render() {
@@ -20,17 +20,17 @@ class PhotoName extends Component {
         TYPE={this._TYPE}
         FIELD={this._FIELD}
         item={photo}
-        className="photo-details photo-details-name"
-        inputId={`photo-name-${photo.id}`}
-        inputClass="photo-input photo-name-input"
+        className="photo-details photo-details-description"
+        inputId={`photo-description-${photo.id}`}
+        inputClass="photo-input photo-description-input"
         textValue={textValue}
-        submit={updatePhoto(photo, { name: textValue }, folderId)}
-        label="Name"
-        value={photo.name}
-        menu={photoDetail(() => startEdit(this._TYPE, this._FIELD, photo.id, photo.name))}
+        submit={updatePhoto(photo, { description: textValue }, folderId)}
+        label="Description"
+        value={photo.description}
+        menu={photoDetail(() => startEdit(this._TYPE, this._FIELD, photo.id, photo.description))}
       />
     );
   }
 }
 
-export default connectDispatch(PhotoName);
+export default connectDispatch(PhotoDescription);

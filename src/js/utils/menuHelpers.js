@@ -2,7 +2,7 @@ import { DISPLAY_CONTEXT_MENU } from '../consts/actionTypes';
 import { handleEvent } from './eventHelpers';
 import { map } from 'fun-util';
 
-export const photoName = ([edit]) => dispatch => {
+export const photoDetail = edit => dispatch => {
   return buildMenu(dispatch, options(['Edit'], [edit], dispatch));
 };
 

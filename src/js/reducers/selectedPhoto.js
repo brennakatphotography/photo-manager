@@ -14,7 +14,7 @@ export default (state = null, { type, photo, photos }) => {
 
 const update = (photo, photos) => {
   const updatedPhoto = photos.find(updatedPhoto => {
-    return getIn(updatedPhoto, 'id') === getIn(photo, 'id')
+    return getIn(updatedPhoto, 'id') === getIn(photo, 'id');
   });
   if (updatedPhoto) {
     return { ...photo, ...updatedPhoto };

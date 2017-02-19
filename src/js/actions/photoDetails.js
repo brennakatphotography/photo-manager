@@ -14,9 +14,9 @@ export const setActivePhoto = (photo, folderId) => ({
   photo
 });
 
-export const updatePhoto = (photo, updates, folderId) => dispatch => {
+export const updatePhoto = ({ id }, updates, folderId) => dispatch => {
   dispatch({ type: ASYNC_UPDATE_PHOTO });
-  return ajax(dispatch).patch(photoById(photo.id), updates)
+  return ajax(dispatch).patch(photoById(id), updates)
     .then(() => dispatch({ type: SUCCEED_UPDATE_PHOTO }))
     .catch(() => dispatch({ type: FAIL_UPDATE_PHOTO }))
     .then(() => dispatch(getFolderPhotos(folderId)));
