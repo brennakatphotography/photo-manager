@@ -1,0 +1,10 @@
+.folder {
+  cursor: pointer;
+  &.folder--selected {
+    background-color: yellow;
+  }
+}
+
+.fa--spacer {
+  width: padding(2);
+}

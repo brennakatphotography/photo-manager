@@ -1,0 +1,21 @@
+.context-menu-container {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  .context-menu {
+    position: absolute;
+    z-index: 200;
+    padding: padding(1);
+    background-color: lightgray;
+    min-width: 200px;
+    .context-menu-item {
+      cursor: pointer;
+      &:hover {
+        font-weight: bold;
+      }
+    }
+  }
+}

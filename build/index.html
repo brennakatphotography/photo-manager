@@ -2,15 +2,18 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ruthie">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/main.css">
+    <script type="text/javascript" src="/env.js"></script>
     <script type="text/javascript" src="/js/app.js"></script>
-    <title>Brenna Kat Photography - Portfolio</title>
+    <title>Brenna Kat Photography - Photo Manager</title>
   </head>
   <body>
     <div id="app">Loading...</div>
     <script id="__bs_script__">
-      document.write("<script async src='http://HOST:3001/browser-sync/browser-sync-client.js?v=2.18.7'><\/script>".replace("HOST", location.hostname));
+      if (getEnv && getEnv().ENV === 'development') {
+        document.write("<script async src='http://HOST:3001/browser-sync/browser-sync-client.js?v=2.18.7'><\/script>".replace("HOST", location.hostname));
+      }
     </script>
   </body>
 </html>

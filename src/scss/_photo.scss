@@ -1,0 +1,19 @@
+.photo {
+  cursor: pointer;
+  &:hover {
+    font-weight: bolder;
+  }
+  &.photo--selected {
+    font-style: italic;
+    color: blue;
+  }
+}
+
+.photo-name {
+  margin-left: padding(2);
+}
+
+.photo-details-name {
+  user-select: none;
+  cursor: default;
+}

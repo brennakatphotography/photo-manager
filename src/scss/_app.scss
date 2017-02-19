@@ -1,0 +1,24 @@
+* {
+  font-family: sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  margin: padding(1);
+}
+
+li {
+    list-style: none;
+  }
+
+ul ul {
+  margin-left: padding(2);
+}
+
+.main {
+  display: flex;
+  & > :first-child {
+    min-width: 33%;
+  }
+}

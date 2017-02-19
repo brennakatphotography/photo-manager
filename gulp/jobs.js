@@ -18,7 +18,7 @@ const SERVER_PORT = 8080;
 const SIM_PORT = 3000;
 
 const SIM_DIR = getArg('simulator');
-const server = subProcess({ cwd: '.', port: SERVER_PORT, cmd: 'node', args: ['server/server/build/server.js'] });
+const server = subProcess({ cwd: '.', port: SERVER_PORT, cmd: 'bin/serve.sh', args: ['build', SERVER_PORT] });
 const simulator = subProcess({ cwd: SIM_DIR, port: SIM_PORT, cmd: 'rackup', args: ['-p', SIM_PORT] });
 
 const browserInit = () => {
