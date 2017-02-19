@@ -15,12 +15,14 @@ class Folder extends Component {
   }
 
   render() {
-    const { folder } = this.props;
+    const { editing, folder, textValue } = this.props;
     return (
       <li>
         <FolderName
+          editing={editing}
           expanded={this.state.expanded}
           folder={folder}
+          textValue={textValue}
           onClick={() => this._flipExpanded()}/>
         {this.renderTree()}
         {this.renderPhotos()}
@@ -29,13 +31,15 @@ class Folder extends Component {
   }
 
   renderTree() {
-    const { folder, photos, selectedPhoto } = this.props;
+    const { editing, folder, photos, selectedPhoto, textValue } = this.props;
     if (this.state.expanded) {
       return (
         <FolderTree
+          editing={editing}
           folders={folder.sub_folders}
           photos={photos}
-          selectedPhoto={selectedPhoto} />
+          selectedPhoto={selectedPhoto}
+          textValue={textValue} />
       );
     }
   }

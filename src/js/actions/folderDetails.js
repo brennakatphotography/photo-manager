@@ -1,6 +1,12 @@
 import ajax from '../utils/ajax';
 import { folderById } from '../consts/urls';
-import { RECEIVE_FOLDER_DETAILS, RECEIVE_FOLDER_PHOTOS } from '../consts/actionTypes';
+import {
+  ASYNC_UPDATE_FOLDER,
+  FAIL_UPDATE_FOLDER,
+  RECEIVE_FOLDER_DETAILS,
+  RECEIVE_FOLDER_PHOTOS,
+  SUCCEED_UPDATE_FOLDER
+} from '../consts/actionTypes';
 
 export const getFolderDetails = id => dispatch => {
   return ajax(dispatch).get(folderById(id)).then(({ data, messages }) => {
@@ -27,3 +33,11 @@ export const receiveFolderPhotos = (id, photos, messages) => ({
   messages,
   id
 });
+
+export const updateFolder = ({ id }, updates) => dispatch => {
+  dispatch({ type: ASYNC_UPDATE_FOLDER });
+  return ajax(dispatch).patch(folderById(id), updates)
+    .then(() => dispatch({ type: SUCCEED_UPDATE_FOLDER }))
+    .catch(() => dispatch({ type: FAIL_UPDATE_FOLDER }))
+    .then(() => dispatch(getFolderDetails(id)));
+};

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connectDispatch } from '../../utils/connectStore';
 import { focusToEnd, handleEvent } from '../../utils/eventHelpers';
 import { cancelEdit, updateEdit } from '../../actions/editField';
+import { getIn } from 'fun-util';
 
 class EditableField extends Component {
   render() {
@@ -16,7 +17,7 @@ class EditableField extends Component {
     const { className, dispatch, item, label, menu, value } = this.props;
     return (
       <div className={className} onContextMenu={dispatch(menu)}>
-        {label}: {value}
+        {label ? `${label}: ` : ''}{value}
       </div>
     );
   }
@@ -28,7 +29,7 @@ class EditableField extends Component {
     } = this.props;
     return (
       <form className={className} onSubmit={handleEvent(() => dispatch(submit))}>
-        <label htmlFor={inputId}>{label}: </label>
+        <label htmlFor={inputId}>{label ? `${label}: ` : ''}</label>
         <input
           type="text"
           className={inputClass}
@@ -45,7 +46,7 @@ class EditableField extends Component {
 }
 
 const isEditing = (editing, item, TYPE, FIELD) => {
-  return editing.id === item.id && editing.type === TYPE && editing.field === FIELD;
+  return getIn(editing, 'id') === item.id && editing.type === TYPE && editing.field === FIELD;
 };
 
 export default connectDispatch(EditableField);

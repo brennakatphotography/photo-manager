@@ -14,14 +14,16 @@ class FolderTreeContainer extends Component {
   }
 
   render() {
-    const { folders, photos, selectedPhoto } = this.props;
+    const { editing, folders, photos, selectedPhoto, textValue } = this.props;
     return (
       <div>
         <h2>Folder Tree</h2>
         <FolderTree
-          folders={folders}
+          editing={editing}
+          folders={folders.map(folder => ({...folder, locked: true}))}
           photos={photos}
-          selectedPhoto={selectedPhoto} />
+          selectedPhoto={selectedPhoto}
+          textValue={textValue} />
       </div>
     );
   }

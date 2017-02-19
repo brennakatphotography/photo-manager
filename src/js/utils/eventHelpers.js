@@ -8,7 +8,6 @@ export const focusToEnd = ({ target }) => {
 
 export const handleEvent = fn => event => {
   event.preventDefault();
-  event.stopPropagation();
   return fn(event);
 };
 

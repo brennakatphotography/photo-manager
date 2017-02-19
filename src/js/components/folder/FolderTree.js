@@ -4,15 +4,17 @@ import { connectDispatch } from '../../utils/connectStore';
 
 class FolderTree extends Component {
   render() {
-    const { folders, photos, selectedPhoto } = this.props;
+    const { editing, folders, photos, selectedPhoto, textValue } = this.props;
     return (
       <ul>
         {folders.map((folder, key) => (
           <Folder
             key={key}
+            editing={editing}
             folder={folder}
             photos={photos}
-            selectedPhoto={selectedPhoto} />
+            selectedPhoto={selectedPhoto}
+            textValue={textValue} />
         ))}
       </ul>
     );

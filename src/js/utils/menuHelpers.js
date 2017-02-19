@@ -6,6 +6,10 @@ export const photoDetail = edit => dispatch => {
   return buildMenu(dispatch, options(['Edit'], [edit], dispatch));
 };
 
+export const folderName = edit => dispatch => {
+  return buildMenu(dispatch, options(['Edit'], [edit], dispatch));
+};
+
 export const buildMenu = (dispatch, actions) => handleEvent(event => {
   const { pageX: x, pageY: y } = event;
   dispatch({ type: DISPLAY_CONTEXT_MENU, actions, position: { x, y } });

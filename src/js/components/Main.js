@@ -13,10 +13,12 @@ class Main extends Component {
     return (
       <div className="main">
         <FolderTreeContainer
+          editing={editing}
           folders={folderTree}
           photos={photos}
           selectedPhoto={selectedPhoto}
-          authenticated={authenticated} />
+          authenticated={authenticated}
+          textValue={textValue} />
         <PhotoDetails
           photo={selectedPhoto}
           editing={editing}

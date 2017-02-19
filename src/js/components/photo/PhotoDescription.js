@@ -13,7 +13,7 @@ class PhotoDescription extends Component {
   }
 
   render() {
-    const { dispatch, editing, folderId, photo, textValue } = this.props;
+    const { editing, folderId, photo, textValue } = this.props;
     return (
       <EditableField
         editing={editing}
