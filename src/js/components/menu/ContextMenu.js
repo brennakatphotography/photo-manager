@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connectDispatch } from '../../utils/connectStore';
 import { addPosition } from '../../utils/positionHelpers';
-import { handleEvent, hideContextMenu } from '../../utils/eventHelpers';
+import { hideContextMenu } from '../../utils/eventHelpers';
 import MenuItem from './MenuItem';
 
 class ContextMenu extends Component {

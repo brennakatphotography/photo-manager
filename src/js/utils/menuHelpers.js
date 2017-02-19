@@ -6,8 +6,8 @@ export const photoDetail = edit => dispatch => {
   return buildMenu(dispatch, options(['Edit'], [edit], dispatch));
 };
 
-export const folderName = edit => dispatch => {
-  return buildMenu(dispatch, options(['Edit'], [edit], dispatch));
+export const folderName = (...args) => dispatch => {
+  return buildMenu(dispatch, options(['Edit', 'Add New Folder'], args, dispatch));
 };
 
 export const buildMenu = (dispatch, actions) => handleEvent(event => {
@@ -17,7 +17,7 @@ export const buildMenu = (dispatch, actions) => handleEvent(event => {
 
 const options = (texts, actions, dispatch) => {
   return map(texts, actions, (text, action) => ({
-    action: () => dispatch(action()),
+    action: action ? () => dispatch(action()) : null,
     text
   }));
 };

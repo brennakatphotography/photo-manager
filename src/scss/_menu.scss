@@ -12,9 +12,14 @@
     background-color: lightgray;
     min-width: 200px;
     .context-menu-item {
-      cursor: pointer;
-      &:hover {
+      &:not(.context-menu-item--disabled) {
+        cursor: pointer;
+      }
+      &:not(.context-menu-item--disabled):hover {
         font-weight: bold;
+      }
+      &.context-menu-item--disabled {
+        color: grey;
       }
     }
   }

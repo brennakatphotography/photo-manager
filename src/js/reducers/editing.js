@@ -1,4 +1,5 @@
 import {
+  ASYNC_CREATE_FOLDER,
   ASYNC_UPDATE_FOLDER,
   ASYNC_UPDATE_PHOTO,
   CANCEL_EDIT_TEXT,
@@ -8,6 +9,7 @@ import {
 
 export default (state = {}, { type, item }) => {
   switch (type) {
+    case ASYNC_CREATE_FOLDER:
     case ASYNC_UPDATE_FOLDER:
     case ASYNC_UPDATE_PHOTO:
     case CANCEL_EDIT_TEXT:
